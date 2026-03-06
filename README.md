@@ -3,7 +3,9 @@
 [![Paper](https://img.shields.io/badge/Paper-ArXiv-red.svg)](https://arxiv.org/abs/2601.17173) 
 [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](https://huggingface.co/datasets/AIM-SCU/MentorQA) 
 
-This repository contains the dataset and code for our paper: **Beyond Factual QA: Mentorship-Oriented Question Answering from Long-Form Multilingual Content**.
+This repository contains the dataset and code for our paper: 
+
+**Beyond Factual QA: Mentorship-Oriented Question Answering from Long-Form Multilingual Content**.
 
 📄 **Preprint:** [https://arxiv.org/pdf/2601.17173](https://arxiv.org/pdf/2601.17173)
 
@@ -44,4 +46,5 @@ MentorQA/
 ├── SingleQA/            # Baseline Single-Agent QA pipeline scripts
 ├── common_utils/        # Shared utility functions and evaluation scripts
 ├── preprocess.py        # Main script for preprocessing video transcripts
+
 └── run.py               # Main execution script for the generation pipelines
