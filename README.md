@@ -83,8 +83,8 @@ Before running the models, preprocess your long-form video transcripts using the
 
 ```bash
 index,url,language
-1,[https://youtube.com/watch?v=example1,English](https://youtube.com/watch?v=example1,English)
-2,[https://youtube.com/watch?v=example2,Chinese](https://youtube.com/watch?v=example2,Chinese)
+1,https://youtube.com/watch?v=example1,English
+2,https://youtube.com/watch?v=example2,Chinese
 ```
 
 ### 2. Run the Generation Pipeline
@@ -143,6 +143,7 @@ If you use our code, the MentorQA dataset, or find our work helpful in your rese
 ## 📝 License
 
 MIT License
+
 
 
 
