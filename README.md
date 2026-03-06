@@ -46,7 +46,6 @@ MentorQA/
 ├── SingleQA/            # Baseline Single-Agent QA pipeline scripts
 ├── common_utils/        # Shared utility functions (paths to models)
 ├── preprocess.py        # Main script for preprocessing video transcripts
-
 └── run.py               # Main execution script for the generation pipelines
 ```
 
@@ -69,16 +68,16 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 ### 3. Install Core Dependencies:
 Our pipeline utilizes the following open-weights models. Ensure your environment has enough VRAM/RAM to support them: 
+* [**Whisper-large-v3**](https://huggingface.co/openai/whisper-large-v3): Used during preprocessing for highly accurate, multilingual audio transcription.
 * [**Qwen2.5-7B-Instruct-1M**](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M): Used for robust, multilingual question synthesis and answer generation.
 * [**BGE-M3**](https://huggingface.co/BAAI/bge-m3): Used for state-of-the-art multilingual text embeddings and retrieval.
-* [**Whisper-large-v3**](https://huggingface.co/openai/whisper-large-v3):
 You can install the required libraries directly using pip.
 
 ## 🚀 How to Run
-The entire pipeline (preprocessing, audio extraction, transcription, and QA generation) is orchestrated by a single script: run.py.
+The entire pipeline (preprocessing, audio extraction, transcription, and QA generation) is orchestrated by a single script: `run.py`.
 
 ### 1. Prepare your input CSV
-Create a CSV file (e.g., videos.csv) containing the videos you want to process. It must contain index, url, and language columns:
+Create a CSV file (e.g., `videos.csv`) containing the videos you want to process. It must contain `index`, `url`, and `language` columns:
 Before running the models, preprocess your long-form video transcripts using the preprocessing script:
 
 ```bash
@@ -88,13 +87,45 @@ index,url,language
 ```
 
 ### 2. Run the Generation Pipeline
-Run run.py and pass your CSV file. The script will automatically build a structured output folder (default: Master/), preprocess the videos, and run the selected approaches.
+Run `run.py` and pass your CSV file. The script will automatically build a structured output folder (default: `Master/`), preprocess the videos, and run the selected approaches.
 
-* Approach IDs: 1 (SingleAgent), 2 (DualAgent), 3 (MultiAgent/Ours), 4 (RAG).
+* Approach IDs: `1` (SingleAgent), `2` (DualAgent), `3` (MultiAgent/Ours), `4` (RAG).
 
+* Run all approaches for all videos in the CSV:*
 ```bash
-
+python run.py --v videos.csv
 ```
+
+* Run ONLY one of the pipeline (e.g., Multi-Agent Approach 3):*
+```bash
+python run.py --v videos.csv --app 3
+```
+
+* Run a specific video index (e.g., video #2) using oneof the pipeline (e.g., RAG Approach 4):*
+```bash
+python run.py --v videos.csv --only 2 --app 4
+```
+
+## 📂 Output Folder Structure
+
+By default, the `run.py` script creates a `Master/` directory to store all outputs, organized by the video `index` from your input CSV. 
+
+For example, if you process Video #1 using Multi-Agent approach, the output structure will look like this:
+
+```text
+Master/
+└── 1/                                   # Folder for Video Index 1
+    ├── Audio/                           # Downloaded audio file (.wav)
+    ├── Transcript/                      # Whisper V3 generated transcript
+    └── MultiAgent-LLMChunking/          # The chosen approach pipeline
+        ├── QA results/
+        │   └── finalQA.json             # The final generated QA pairs!
+        └── intermediate/                
+            ├── Intermediate.json        # Step-by-step reasoning/scores
+            ├── chunks.json              # Processed transcript segments
+            └── debug_chunk.json         # Debugging metadata
+```
+Each approach you enable (e.g., `SingleAgent`, `RAG`, `DualAgent`) will generate its own dedicated folder alongside `MultiAgent-LLMChunking/` containing its respective `finalQA.json` and intermediate files.
 
 📝 Citation
 If you use our code, the MENTORQA dataset, or find our work helpful in your research, please cite our paper:
@@ -111,6 +142,7 @@ If you use our code, the MENTORQA dataset, or find our work helpful in your rese
 ## 📝 License
 
 MIT License
+
 
 
 
