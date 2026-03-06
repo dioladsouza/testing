@@ -40,7 +40,7 @@ The MentorQA dataset contains the video links and generated QA pairs evaluated i
 ```text
 MentorQA/
 ├── Anonymized-Dataset/  # The anonymized human & LLM evaluation dataset
-├── LLMChunking/         # Code for standard LLM chunking baseline methods
+├── LLMChunking/         # Code for Dual-Agent chunking baseline methods
 ├── MultiAgentChunking/  # Core multi-agent chunking and extraction framework (Ours)
 ├── RAG/                 # Retrieval-Augmented Generation baseline implementation
 ├── SingleQA/            # Baseline Single-Agent QA pipeline scripts
@@ -51,7 +51,7 @@ MentorQA/
 ```
 
 
-## 🛠️ Setup
+## ⚙️ Installation
 
 ### 1. Clone the repository:
 
@@ -68,30 +68,50 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 
 ### 3. Install Core Dependencies:
-Our pipeline utilizes [**Qwen2.5-7B-Instruct-1M**(https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M) and [**BGE-M3**](https://huggingface.co/BAAI/bge-m3) models. You can install the required libraries directly using pip:
+Our pipeline utilizes the following open-weights models. Ensure your environment has enough VRAM/RAM to support them: 
+* [**Qwen2.5-7B-Instruct-1M**](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M): Used for robust, multilingual question synthesis and answer generation.
+* [**BGE-M3**](https://huggingface.co/BAAI/bge-m3): Used for state-of-the-art multilingual text embeddings and retrieval.
+* [**Whisper-large-v3**](https://huggingface.co/openai/whisper-large-v3):
+You can install the required libraries directly using pip.
+
+## 🚀 How to Run
+The entire pipeline (preprocessing, audio extraction, transcription, and QA generation) is orchestrated by a single script: run.py.
+
+### 1. Prepare your input CSV
+Create a CSV file (e.g., videos.csv) containing the videos you want to process. It must contain index, url, and language columns:
+Before running the models, preprocess your long-form video transcripts using the preprocessing script:
 
 ```bash
-# Production namespace
+index,url,language
+1,[https://youtube.com/watch?v=example1,English](https://youtube.com/watch?v=example1,English)
+2,[https://youtube.com/watch?v=example2,Chinese](https://youtube.com/watch?v=example2,Chinese)
+```
 
+### 2. Run the Generation Pipeline
+Run run.py and pass your CSV file. The script will automatically build a structured output folder (default: Master/), preprocess the videos, and run the selected approaches.
 
-# Preview namespace
+* Approach IDs: 1 (SingleAgent), 2 (DualAgent), 3 (MultiAgent/Ours), 4 (RAG).
+
+```bash
 
 ```
 
-### 4. 
+📝 Citation
+If you use our code, the MENTORQA dataset, or find our work helpful in your research, please cite our paper:
 
-
-### 5. Run
-
-```bash
-
+```bibtex
+@article{bhalerao2026mentorqa,
+  title={Beyond Factual QA: Mentorship-Oriented Question Answering over Long-Form Multilingual Content},
+  author={Bhalerao, Parth and Dsouza, Diola and Guan, Ruiwen and Ignat, Oana},
+  journal={arXiv preprint arXiv:2601.17173},
+  year={2026}
+}
 ```
-
-
 
 ## 📝 License
 
 MIT License
+
 
 
 
