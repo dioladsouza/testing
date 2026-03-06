@@ -71,6 +71,7 @@ Our pipeline utilizes the following open-weights models. Ensure your environment
 * [**Whisper-large-v3**](https://huggingface.co/openai/whisper-large-v3): Used during preprocessing for highly accurate, multilingual audio transcription.
 * [**Qwen2.5-7B-Instruct-1M**](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M): Used for robust, multilingual question synthesis and answer generation.
 * [**BGE-M3**](https://huggingface.co/BAAI/bge-m3): Used for state-of-the-art multilingual text embeddings and retrieval.
+  
 You can install the required libraries directly using pip.
 
 ## 🚀 How to Run
@@ -142,6 +143,7 @@ If you use our code, the MentorQA dataset, or find our work helpful in your rese
 ## 📝 License
 
 MIT License
+
 
 
 
