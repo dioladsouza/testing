@@ -15,7 +15,7 @@ This repository contains the dataset and code for our paper:
 
 ## 📖 Overview
 
-We introduce **MentorQA**, the first multilingual benchmark for mentorship-focused question answering from long-form videos. Standard AI benchmarks often reward models for generating generic, surface-level factual answers. However, real-world users seeking advice need deep, actionable guidance. 
+We introduce **MentorQA**, the first multilingual dataset and evaluation framework designed for mentorship-focused question answering from long-form videos. Standard AI benchmarks often reward models for generating generic, surface-level factual answers. However, real-world users seeking advice need deep, actionable guidance. 
 
 This project shows that our multi-agent QA systems produce significantly more effective guidance than factual QA baselines—especially for complex topics and low-resource languages—while highlighting the limits of current automated evaluation.
 
@@ -127,8 +127,8 @@ Master/
 ```
 Each approach you enable (e.g., `SingleAgent`, `RAG`, `DualAgent`) will generate its own dedicated folder alongside `MultiAgent-LLMChunking/` containing its respective `finalQA.json` and intermediate files.
 
-📝 Citation
-If you use our code, the MENTORQA dataset, or find our work helpful in your research, please cite our paper:
+## 📝 Citation
+If you use our code, the MentorQA dataset, or find our work helpful in your research, please cite our paper:
 
 ```bibtex
 @article{bhalerao2026mentorqa,
@@ -142,6 +142,7 @@ If you use our code, the MENTORQA dataset, or find our work helpful in your rese
 ## 📝 License
 
 MIT License
+
 
 
 
