@@ -45,7 +45,7 @@ MentorQA/
 ├── RAG/                 # Retrieval-Augmented Generation baseline implementation
 ├── SingleQA/            # Baseline Single-Agent QA pipeline scripts
 ├── common_utils/        # Shared utility functions (paths to models)
-├── preprocess.py        # Main script for preprocessing video transcripts
+├── preprocess.py        # Main script for preprocessing videos
 └── run.py               # Main execution script for the generation pipelines
 ```
 
@@ -142,6 +142,7 @@ If you use our code, the MENTORQA dataset, or find our work helpful in your rese
 ## 📝 License
 
 MIT License
+
 
 
 
