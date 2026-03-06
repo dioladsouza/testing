@@ -39,12 +39,12 @@ The MentorQA dataset contains the video links and generated QA pairs evaluated i
 
 ```text
 MentorQA/
-├── Anonymized-Dataset/  # The anonymized human evaluation dataset
+├── Anonymized-Dataset/  # The anonymized human & LLM evaluation dataset
 ├── LLMChunking/         # Code for standard LLM chunking baseline methods
 ├── MultiAgentChunking/  # Core multi-agent chunking and extraction framework (Ours)
 ├── RAG/                 # Retrieval-Augmented Generation baseline implementation
 ├── SingleQA/            # Baseline Single-Agent QA pipeline scripts
-├── common_utils/        # Shared utility functions and evaluation scripts
+├── common_utils/        # Shared utility functions (paths to models)
 ├── preprocess.py        # Main script for preprocessing video transcripts
 
 └── run.py               # Main execution script for the generation pipelines
@@ -68,7 +68,7 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 
 ### 3. Install Core Dependencies:
-Our pipeline utilizes **Qwen2.5-7B-Instruct-1M** and BGE-M3 models. You can install the required libraries directly using pip:
+Our pipeline utilizes [**Qwen2.5-7B-Instruct-1M**(https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M) and [**BGE-M3**](https://huggingface.co/BAAI/bge-m3) models. You can install the required libraries directly using pip:
 
 ```bash
 # Production namespace
@@ -92,5 +92,6 @@ Our pipeline utilizes **Qwen2.5-7B-Instruct-1M** and BGE-M3 models. You can inst
 ## 📝 License
 
 MIT License
+
 
 
