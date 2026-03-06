@@ -91,17 +91,17 @@ Run `run.py` and pass your CSV file. The script will automatically build a struc
 
 * Approach IDs: `1` (SingleAgent), `2` (DualAgent), `3` (MultiAgent/Ours), `4` (RAG).
 
-* Run all approaches for all videos in the CSV:*
+_Run all approaches for all videos in the CSV:_
 ```bash
 python run.py --v videos.csv
 ```
 
-* Run ONLY one of the pipeline (e.g., Multi-Agent Approach 3):*
+_Run ONLY one of the pipeline (e.g., Multi-Agent Approach 3):_
 ```bash
 python run.py --v videos.csv --app 3
 ```
 
-* Run a specific video index (e.g., video #2) using oneof the pipeline (e.g., RAG Approach 4):*
+_Run a specific video index (e.g., video #2) using oneof the pipeline (e.g., RAG Approach 4):_
 ```bash
 python run.py --v videos.csv --only 2 --app 4
 ```
@@ -142,6 +142,7 @@ If you use our code, the MENTORQA dataset, or find our work helpful in your rese
 ## 📝 License
 
 MIT License
+
 
 
 
