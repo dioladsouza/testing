@@ -48,6 +48,8 @@ MentorQA/
 ├── preprocess.py        # Main script for preprocessing video transcripts
 
 └── run.py               # Main execution script for the generation pipelines
+```
+
 
 ## 🛠️ Setup
 
@@ -90,4 +92,5 @@ Our pipeline utilizes **Qwen2.5-7B-Instruct-1M** and BGE-M3 models. You can inst
 ## 📝 License
 
 MIT License
+
 
