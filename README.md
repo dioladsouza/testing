@@ -10,7 +10,7 @@ This repository contains the dataset and code for our paper:
 📄 **Preprint:** [https://arxiv.org/pdf/2601.17173](https://arxiv.org/pdf/2601.17173)
 
 <p align="center">
-  <img src="mentorship.jpg" alt="Mentorship Overview" width="30%">
+  <img src="Mentorship.jpg" alt="Mentorship Overview" width="30%">
 </p>
 
 ## 📖 Overview
@@ -48,3 +48,4 @@ MentorQA/
 ├── preprocess.py        # Main script for preprocessing video transcripts
 
 └── run.py               # Main execution script for the generation pipelines
+
