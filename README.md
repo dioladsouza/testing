@@ -49,3 +49,45 @@ MentorQA/
 
 └── run.py               # Main execution script for the generation pipelines
 
+## 🛠️ Setup
+
+### 1. Clone the repository:
+
+```bash
+git clone https://github.com/AIM-SCU/MentorQA.git
+cd MentorQA
+```
+
+### 2. Create a virtual environment (Recommended):
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+### 3. Install Core Dependencies:
+Our pipeline utilizes **Qwen2.5-7B-Instruct-1M** and BGE-M3 models. You can install the required libraries directly using pip:
+
+```bash
+# Production namespace
+
+
+# Preview namespace
+
+```
+
+### 4. 
+
+
+### 5. Run
+
+```bash
+
+```
+
+
+
+## 📝 License
+
+MIT License
+
